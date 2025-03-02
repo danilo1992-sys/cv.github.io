@@ -1,0 +1,79 @@
+---
+import { basics } from "@/cv.json";
+import GitHub from "@/icons/github.astro";
+import LinkedIn from "@/icons/linkedin.astro";
+import Location from "@/icons/location.astro";
+import Mail from "@/icons/mail.astro";
+import Phone from "@/icons/phone.astro";
+import Section from "@/components/Section.astro";
+
+const { name, titulo, edad, contacto, Sumary, location, image, profiles } =
+  basics;
+
+const { phone, email } = contacto;
+
+const { address, postalcode, country } = location;
+
+const SOCIAL: Record<string, any> = {
+  LinkedIn,
+  GitHub,
+};
+---
+
+<Section>
+  <div class="flex flex-row items-center justify-between gap-4">
+    <div class="flex flex-col gap-2 pr-8">
+      <h1>{name}</h1>
+      <h1>{titulo}</h1>
+      <span>
+        {address}, {postalcode}, {country}
+      </span>
+      <Location />
+      <footer>
+        {
+          email && (
+            <a
+              href={`mailto:${email}`}
+              title={`Envía un correo electrónico a ${name} al correo ${email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail />
+            </a>
+          )
+        }
+        {
+          phone && (
+            <a
+              href={`tel:${phone}`}
+              title={`Llamar por teléfono a ${name} al numero ${phone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Phone />
+            </a>
+          )
+        },
+        {
+          profiles.map(({ network, url, username }) => {
+            const Icons = SOCIAL[network];
+            
+            return Icons ? (
+              <a
+                href={url}
+                title={`Visita el perfil de ${username} en ${network}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icons />
+              </a>
+            ) : null;
+          })
+        }
+      </footer>
+    </div>
+    <figure>
+      <img src={image} alt={name} />
+    </figure>
+  </div>
+</Section>
