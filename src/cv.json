@@ -1,6 +1,6 @@
 {
   "basics": {
-    "image": "https://i.postimg.cc/9MZLDSZ5/IMG-20191106-121644.png",
+    "image": "/mi.webp",
     "name": "Danilo Caceres",
     "titulo": "Especilista en soporte de sistema con orientacion en el area de soporte tecnico",
     "edad": 32,
@@ -21,7 +21,7 @@
         "url": "https://www.linkedin.com/in/Danilo Caceres/"
       },
       {
-        "network": "Github",
+        "network": "GitHub",
         "username": "danilo1992-sys",
         "url": "https://github.com/danilo1992-sys"
       }

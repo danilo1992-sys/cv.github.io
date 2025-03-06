@@ -1,11 +1,12 @@
 ---
+import Section from "@/components/Section.astro";
+import Icons from "@/components/icosn.astro";
 import { basics } from "@/cv.json";
 import GitHub from "@/icons/github.astro";
 import LinkedIn from "@/icons/linkedin.astro";
 import Location from "@/icons/location.astro";
 import Mail from "@/icons/mail.astro";
 import Phone from "@/icons/phone.astro";
-import Section from "@/components/Section.astro";
 
 const { name, titulo, edad, contacto, Sumary, location, image, profiles } =
   basics;
@@ -15,20 +16,22 @@ const { phone, email } = contacto;
 const { address, postalcode, country } = location;
 
 const SOCIAL: Record<string, any> = {
-  LinkedIn,
   GitHub,
+  LinkedIn,
 };
 ---
 
 <Section>
-  <div class="flex flex-row items-center justify-between gap-4">
-    <div class="flex flex-col gap-2 pr-8">
+  <div class="container">
+    <div class="info">
       <h1>{name}</h1>
-      <h1>{titulo}</h1>
+      <h2>{titulo}</h2>
       <span>
         {address}, {postalcode}, {country}
+        <Icons>
+          <Location />
+        </Icons>
       </span>
-      <Location />
       <footer>
         {
           email && (
@@ -37,6 +40,7 @@ const SOCIAL: Record<string, any> = {
               title={`Envía un correo electrónico a ${name} al correo ${email}`}
               target="_blank"
               rel="noopener noreferrer"
+              class="no-underline"
             >
               <Mail />
             </a>
@@ -49,21 +53,22 @@ const SOCIAL: Record<string, any> = {
               title={`Llamar por teléfono a ${name} al numero ${phone}`}
               target="_blank"
               rel="noopener noreferrer"
+              class="no-underline"
             >
               <Phone />
             </a>
           )
-        },
+        }
         {
           profiles.map(({ network, url, username }) => {
             const Icons = SOCIAL[network];
-            
             return Icons ? (
               <a
                 href={url}
                 title={`Visita el perfil de ${username} en ${network}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                class="no-underline"
               >
                 <Icons />
               </a>
@@ -77,3 +82,69 @@ const SOCIAL: Record<string, any> = {
     </figure>
   </div>
 </Section>
+
+<style>
+  .location {
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    color: #444;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-wrap: balance;
+  }
+  img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 128px;
+    border-radius: 16px;
+  }
+
+  span {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-right: 32px;
+  }
+
+  footer {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  footer a {
+    align-items: center;
+    justify-items: center;
+    display: inline-flex;
+    border: 1px solid #eee;
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  footer a:hover {
+    background-color: #eee;
+    border: 1px solid #ddd;
+  }
+</style>

@@ -1,5 +1,25 @@
 ---
-import Section from '@/components/Section.astro';
+import Section from "@/components/Section.astro";
+import User from "@/icons/user.astro";
+import Icons from "@/components/icosn.astro";
+import { basics } from "@/cv.json";
+const { Sumary } = basics;
 ---
 
-<Section title="Aboutme"/>
+<Section>
+  <div>
+    <h2>Aboutme 
+      <Icons>
+      <User/> 
+    </Icons>
+    </h2>
+  </div>
+  <p class="about-me-summary">{Sumary}</p>
+</Section>
+
+<style>
+  
+  .about-me-summary {
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+  }
+</style>
