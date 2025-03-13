@@ -1,4 +1,43 @@
 ---
-import Section from '@/components/Section.astro';
+import Icons from "@/components/icons.astro";
+import Section from "@/components/Section.astro";
+import { skills } from "@/cv.json";
+import Skill from "@/icons/skills.astro";
 ---
-<Section title="Skills"/>
+
+<Section>
+  <h2>
+    Skills <Icons><Skill /></Icons>
+  </h2>
+  <ul>
+    {
+      skills.map(({ name }) => {
+        return name ? (
+          <li>
+            <span>{name}</span>
+          </li>
+        ) : null;
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  li {
+    align-items: center;
+    background: #eee;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 4px;
+    padding: 0.2rem 0.6rem;
+  }
+</style>

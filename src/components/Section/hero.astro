@@ -1,6 +1,6 @@
 ---
 import Section from "@/components/Section.astro";
-import Icons from "@/components/icosn.astro";
+import Icons from "@/components/icons.astro";
 import { basics } from "@/cv.json";
 import GitHub from "@/icons/github.astro";
 import LinkedIn from "@/icons/linkedin.astro";
@@ -8,10 +8,18 @@ import Location from "@/icons/location.astro";
 import Mail from "@/icons/mail.astro";
 import Phone from "@/icons/phone.astro";
 
-const { name, titulo, edad, contacto, Sumary, location, image, profiles } =
-  basics;
+const {
+  name,
+  titulo,
+  birthdate,
+  contacto,
+  location,
+  image,
+  profiles,
+} = basics;
 
-const { phone, email } = contacto;
+
+const { email, phone } = contacto;
 
 const { address, postalcode, country } = location;
 
@@ -19,12 +27,18 @@ const SOCIAL: Record<string, any> = {
   GitHub,
   LinkedIn,
 };
+
+const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
+const linkedUrl = linkedInfo?.url;
+
+const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 ---
 
 <Section>
   <div class="container">
     <div class="info">
       <h1>{name}</h1>
+      <p>Fecha de nacimiento: <h4>{birthdate}</h4></p>
       <h2>{titulo}</h2>
       <span>
         {address}, {postalcode}, {country}
@@ -32,7 +46,10 @@ const SOCIAL: Record<string, any> = {
           <Location />
         </Icons>
       </span>
-      <footer>
+      <footer class="print">
+        {printInfo}
+      </footer>
+      <footer class="no-print">
         {
           email && (
             <a
@@ -126,6 +143,8 @@ const SOCIAL: Record<string, any> = {
   }
 
   footer {
+    color: #555;
+    font-size: 0.85rem;
     display: flex;
     gap: 4px;
     margin-top: 8px;

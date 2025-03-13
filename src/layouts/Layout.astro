@@ -12,7 +12,7 @@
   </body>
 </html>
 
-<style>
+<style is:global>
   html {
     font-family:
       Menlo,
@@ -21,19 +21,20 @@
       "Courier New",
       Courier,
       monospace;
+    background: #fff;
     letter-spacing: -0.025rem;
-    background-color: #ffffff;
   }
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-  ,
+
+  body,
   figure {
     margin: 0;
     padding: 0;
   }
+
+  a {
+    text-decoration: none;
+  }
+
   ul {
     list-style: none;
     margin: 0;
@@ -63,13 +64,27 @@
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+      
   }
 
   p {
-    color: white;
-    font-size: 8rem;
+    color: #666;
+    font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;
     text-wrap: pretty;
   }
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+  .print {
+      display: none !important;
+    }
+@media print {
+  .print {
+    display: block !important;
+  }
+}
 </style>

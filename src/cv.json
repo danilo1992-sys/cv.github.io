@@ -3,11 +3,11 @@
     "image": "/mi.webp",
     "name": "Danilo Caceres",
     "titulo": "Especilista en soporte de sistema con orientacion en el area de soporte tecnico",
-    "edad": 32,
+    "birthdate": "22/08/1992",
     "Sumary": "Hola soy Danilo Cáceres tengo mas de 10 años de experiencia en el área de soporte técnico en servidores, en este momento me encuentro mi primera experiencia laboral en el ámbito formal",
     "contacto": {
-      "phone": "095 433 880",
-      "email": "danilogabrielcaceres@gmail.com"
+      "email": "danilogabrielcaceres@gmail.com",
+      "phone": "095 433 880"
     },
     "location": {
       "address": "gregorio camino 753",
@@ -27,64 +27,100 @@
       }
     ]
   },
-  "experiencia_académica": [
+  "experiencia": [
     {
       "año": 2020,
       "institución": "Instituto Tecnológico Superior Arias Balparda",
-      "proyecto": "Creación de una página web con backend y frontend para un hotel canino. Frontend creado con HTML5 y CSS. Backend creado en Bash script con conexión a una base de datos MySQL."
+      "summary": "Creación de una página web con backend y frontend para un hotel canino. Frontend creado con HTML5 y CSS. Backend creado en Bash script y conexión a una base de datos MySQL.",
+      "titulo": "Soporte de sistemas"
     },
     {
       "año": 2021,
       "institución": "Udemy",
       "titulo": "Programador python flask",
-      "proyecto": "Creación de varias aplicaciones de escritorio con Python y TKinter, y creación de aplicaciones web en Flask."
+      "summary": "Creación de varias aplicaciones de escritorio con Python y TKinter, y creación de aplicaciones web en Flask."
     },
     {
       "año": 2022,
       "institución": "Udemy",
       "titulo": "Programador javascrip con node ",
-      "proyecto": "Creación de aplicaciones web fullstack con react y node "
+      "summary": "Creación de aplicaciones web fullstack con react y node "
     },
     {
       "año": 2023,
       "institución": "Udemy",
       "titulo": "Infraestructura con docker",
-      "proyecto": "Creacion de infraestrucutura con docker y kubernetes"
+      "summary": "Creacion de infraestrucutura con docker y kubernetes"
     },
     {
       "año": 2024,
       "institución": "Autodidacta",
       "titulo": "Programador javascrip con astro",
-      "proyecto": "Creación de aplicaciones web fullstack con astro y node "
+      "summary": "Creación de aplicaciones web fullstack con astro y node "
     }
   ],
-  "programas_manejados": [
-    "MySQL",
-    "Docker",
-    "Git",
-    "Kubernetes",
-    "Bash Scripting"
+  "skills": [
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "Git"
+    },
+    {
+      "name": "Kubernetes"
+    },
+    {
+      "name": "Bash Scripting"
+    },
+    {
+      "name": "Python Scripting"
+    },
+    {
+      "name": "Javascript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Node"
+    },
+    {
+      "name": "Astro"
+    }
   ],
   "cursos": [
     {
       "nombre": "Técnico en soporte de servidores",
       "fecha_inicio": "Marzo 2018",
-      "fecha_fin": "Noviembre 2020"
+      "fecha_fin": "Noviembre 2020",
+      "institución": "Instituto Tecnológico Superior Arias Balparda"
     },
     {
-      "nombre": "Python",
+      "nombre": "Programador Python",
       "fecha_inicio": "Julio 2021",
-      "fecha_fin": "Febrero 2022"
+      "fecha_fin": "Febrero 2022",
+      "institución": "Udemy"
     },
     {
-      "nombre": "Programador Javascript",
+      "nombre": "Programador Javascript con Nodejs ",
       "fecha_inicio": "Mayo 2022",
-      "fecha_fin": "Octubre 2022"
+      "fecha_fin": "Octubre 2022",
+      "institución": "Udemy"
     },
     {
       "nombre": "Infraestructura con docker",
       "fecha_inicio": "Marso 2023",
-      "fecha_fin": " Noviembre 2023"
+      "fecha_fin": " Noviembre 2023",
+      "institución": "Udemy"
+    },
+    {
+      "nombre": "Programador Javascript con Astro y Nodejs",
+      "fecha_inicio": "Enero 2024",
+      "fecha_fin": " Presente",
+      "institución": "Autodidacta"
     }
   ]
 }
