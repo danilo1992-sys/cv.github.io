@@ -1,5 +1,11 @@
+---
+import { basics } from "@/cv.json";
+
+const { qr } = basics;
+---
+
 <figure class="print">
-  <img src="https://i.postimg.cc/rpBv61Mq/descarga.png" alt="QR" />
+  <img src={qr} alt="QR" />
 </figure>
 <style>
   img {
