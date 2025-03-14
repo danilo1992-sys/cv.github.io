@@ -7,9 +7,17 @@ import LinkedIn from "@/icons/linkedin.astro";
 import Location from "@/icons/location.astro";
 import Mail from "@/icons/mail.astro";
 import Phone from "@/icons/phone.astro";
-import Qr from "@/components/Section/qr.astro";
 
-const { name, titulo, birthdate, contacto, location, image, profiles } = basics;
+const {
+  name,
+  titulo,
+  birthdate,
+  contacto,
+  location,
+  image,
+  profiles,
+} = basics;
+
 
 const { email, phone } = contacto;
 
@@ -86,7 +94,6 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
         }
       </footer>
     </div>
-    <Qr/>
     <figure>
       <img src={image} alt={name} />
     </figure>
