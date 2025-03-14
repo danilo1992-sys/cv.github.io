@@ -1,3 +1,9 @@
+---
+import { basics } from "@/cv.json";
+
+const { name, titulo } = basics;
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,11 +11,15 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
   </head>
   <body>
     <slot />
   </body>
+  <title>
+    Currículum vitae de
+    {name} -
+    {titulo}
+  </title>
 </html>
 
 <style is:global>
@@ -64,7 +74,6 @@
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
-      
   }
 
   p {
@@ -80,11 +89,11 @@
     }
   }
   .print {
-      display: none !important;
-    }
-@media print {
-  .print {
-    display: block !important;
+    display: none !important;
   }
-}
+  @media print {
+    .print {
+      display: block !important;
+    }
+  }
 </style>

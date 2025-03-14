@@ -1,14 +1,14 @@
 ---
+import Aboutme from "@/components/Section/aboutme.astro";
 import Exprince from "@/components/Section/experience.astro";
 import Hero from "@/components/Section/hero.astro";
-import Layout from "@/layouts/Layout.astro";
-import Skills from "@/components/Section/skills.astro";
-import Aboutme from "@/components/Section/aboutme.astro";
 import Keyboarmanager from "@/components/Section/Keyboarmanager.astro";
+import Skills from "@/components/Section/skills.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title={`Curriculum vitae de `}>
-  <main class="p-16 m-auto w-full">
+<Layout >
+  <main>
     <Hero />
     <Aboutme />
     <Exprince />
@@ -18,6 +18,12 @@ import Keyboarmanager from "@/components/Section/Keyboarmanager.astro";
 </Layout>
 
 <style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
   @media (width <= 700px) {
     main {
       padding: 2rem;
