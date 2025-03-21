@@ -1,11 +1,17 @@
 ---
-import { basics } from "@/cv.json";
+import { langlist } from "@/i18n/ui";
+import { translation } from "@/i18n/utils";
+import { basics } from "@/pages/es/cv.json";
 
 const { name, titulo } = basics;
+
+const currentlang = Astro.currentLocale || "es";
+
+const translator = translation(currentlang as keyof typeof langlist);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentlang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -16,7 +22,7 @@ const { name, titulo } = basics;
     <slot />
   </body>
   <title>
-    Currículum vitae de
+    {translator("home.title")}
     {name} -
     {titulo}
   </title>
@@ -96,4 +102,47 @@ const { name, titulo } = basics;
       display: block !important;
     }
   }
+
+  .darkmode {
+    --base-color: #070b1d;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+  }
+
+  #switch-theme {
+    height: 50px;
+    width: 50px;
+    padding: 0px;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  #switch-theme svg {
+    fill: var(--primary-color);
+  }
+
+  #switch-theme svg:last-child {
+    display: none;
+  }
+
+  .darkmode #switch-theme svg:first-child {
+    display: none;
+  }
+
+  .darkmode #switch-theme svg:last-child {
+    display: block;
+  }
 </style>
+
+<script></script>

@@ -2,13 +2,19 @@
 import Section from "@/components/Section.astro";
 import User from "@/icons/user.astro";
 import Icons from "@/components/icons.astro";
-import { basics } from "@/cv.json";
+import { basics } from "../cv.json";
+import { langlist } from "@/i18n/ui";
+import { translation } from "@/i18n/utils";
 const { Sumary } = basics;
+
+const currentlang = Astro.currentLocale || "es";
+  
+const translator = translation(currentlang as keyof typeof langlist);
 ---
 
 <Section>
   <div>
-    <h2>Aboutme 
+    <h2>{translator('h2.Aboutme')} 
       <Icons>
       <User/> 
     </Icons>

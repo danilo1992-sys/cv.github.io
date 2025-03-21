@@ -1,27 +1,34 @@
 ---
 import Icons from "@/components/icons.astro";
 import Section from "@/components/Section.astro";
-import { experiencia } from "@/cv.json";
+import { langlist } from "@/i18n/ui";
+import { translation } from "@/i18n/utils";
 import Job from "@/icons/job.astro";
+import { experience } from "../cv-en.json";
+
+import currentlang from "@/layouts/Layout.astro";
+
+const translator = translation(currentlang as unknown as keyof typeof langlist);
 ---
 
 <Section>
   <h2>
-    Academic Experience <Icons>
+    {translator("h2.Academic")}
+    <Icons>
       <Job />
     </Icons>
   </h2>
   <ul>
     {
-      experiencia.map(({ año, institución, titulo, summary }) => {
-        return experiencia ? (
+      experience.map(({ year, institution, title, summary }) => {
+        return experience ? (
           <li>
             <article>
               <header>
-                <h2>{institución}</h2>
-                <time>{año}</time>
+                <h2>{institution}</h2>
+                <time>{year}</time>
               </header>
-                <h3>{titulo}</h3>
+              <h3>{title}</h3>
               <footer>
                 <p>{summary}</p>
               </footer>
@@ -34,7 +41,7 @@ import Job from "@/icons/job.astro";
 </Section>
 
 <style>
-   ul {
+  ul {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -50,7 +57,7 @@ import Job from "@/icons/job.astro";
     align-items: flex-start;
     margin-bottom: 4px;
   }
-  time{
+  time {
     font-size: 20px;
   }
 </style>

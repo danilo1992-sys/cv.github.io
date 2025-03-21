@@ -1,0 +1,127 @@
+{
+  "basics": {
+    "qr": "/qr.webp",
+    "image": "/mi.webp",
+    "name": "Danilo Caceres",
+    "title": "System Support Specialist with focus in Technical Support",
+    "birthdate": "22/08/1992",
+    "summary": "Hello, I am Danilo Cáceres. I have over 10 years of experience in server technical support. Currently, I am in my first formal work experience.",
+    "contact": {
+      "email": "danilogabrielcaceres@gmail.com",
+      "phone": "095 433 880"
+    },
+    "location": {
+      "address": "gregorio camino 753",
+      "postalcode": "11900",
+      "country": "la teja"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Danilo Caceres",
+        "url": "https://www.linkedin.com/in/Danilo Caceres/"
+      },
+      {
+        "network": "GitHub",
+        "username": "danilo1992-sys",
+        "url": "https://github.com/danilo1992-sys"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "year": 2020,
+      "institution": "Instituto Tecnológico Superior Arias Balparda",
+      "summary": "Creation of a website with backend and frontend for a canine hotel. Frontend created with HTML5 and CSS. Backend created in Bash script and connection to a MySQL database.",
+      "title": "Systems Support"
+    },
+    {
+      "year": 2021,
+      "institution": "Udemy",
+      "title": "Python Flask Programmer",
+      "summary": "Creation of various desktop applications with Python and TKinter, and creation of web applications in Flask."
+    },
+    {
+      "year": 2022,
+      "institution": "Udemy",
+      "title": "Javascript Programmer with Node",
+      "summary": "Creation of fullstack web applications with React and Node."
+    },
+    {
+      "year": 2023,
+      "institution": "Udemy",
+      "title": "Infrastructure with Docker",
+      "summary": "Creation of infrastructure with Docker and Kubernetes."
+    },
+    {
+      "year": 2024,
+      "institution": "Self-taught",
+      "title": "Javascript Programmer with Astro",
+      "summary": "Creation of fullstack web applications with Astro and Node."
+    }
+  ],
+  "skills": [
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "Git"
+    },
+    {
+      "name": "Kubernetes"
+    },
+    {
+      "name": "Bash Scripting"
+    },
+    {
+      "name": "Python Scripting"
+    },
+    {
+      "name": "Javascript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Node"
+    },
+    {
+      "name": "Astro"
+    }
+  ],
+  "courses": [
+    {
+      "name": "Server Support Technician",
+      "start_date": "March 2018",
+      "end_date": "November 2020",
+      "institution": "Instituto Tecnológico Superior Arias Balparda"
+    },
+    {
+      "name": "Python Programmer",
+      "start_date": "July 2021",
+      "end_date": "February 2022",
+      "institution": "Udemy"
+    },
+    {
+      "name": "Javascript Programmer with Nodejs",
+      "start_date": "May 2022",
+      "end_date": "October 2022",
+      "institution": "Udemy"
+    },
+    {
+      "name": "Infrastructure with Docker",
+      "start_date": "March 2023",
+      "end_date": "November 2023",
+      "institution": "Udemy"
+    },
+    {
+      "name": "Javascript Programmer with Astro and Nodejs",
+      "start_date": "January 2024",
+      "end_date": "Present",
+      "institution": "Self-taught"
+    }
+  ]
+}

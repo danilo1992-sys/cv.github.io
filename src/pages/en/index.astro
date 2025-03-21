@@ -1,0 +1,34 @@
+---
+import Aboutme from "@/pages/en/Section/aboutme.astro";
+import Exprince from "@/pages/en/Section/experience.astro";
+import Hero from "@/pages/en/Section/hero.astro";
+import Keyboarmanager from "@/pages/en/Section/Keyboarmanager.astro";
+import Skills from "@/pages/en/Section/skills.astro";
+import Layout from "@/layouts/Layout.astro";
+import Lang from "@/components/changelan.astro";
+---
+
+<Layout>
+  <main>
+    <Lang/>
+    <Hero />
+    <Aboutme />
+    <Exprince />
+    <Skills />
+  </main>
+  <Keyboarmanager />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 2rem;
+    }
+  }
+</style>

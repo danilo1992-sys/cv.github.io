@@ -1,7 +1,11 @@
 ---
-import { basics } from "@/cv.json";
-
+import { basics } from "../cv-en.json";
 const { profiles } = basics;
+import currentlang from "@/layouts/Layout.astro";
+import { langlist } from "@/i18n/ui";
+import { translation } from "@/i18n/utils";
+const translator = translation(currentlang as unknown as keyof typeof langlist);
+
 
 const SOCIAL_ICONS: Record<string, string> = {
   GitHub: `<svg
@@ -35,8 +39,8 @@ const SOCIAL_ICONS: Record<string, string> = {
 };
 
 const profilesInfo = profiles.map(({ network, url }) => {
-  const icon = SOCIAL_ICONS[network]
-  const firstLetter = network[0].toUpperCase()
+  const icon = SOCIAL_ICONS[network];
+  const firstLetter = network[0].toUpperCase();
 
   return {
     id: network,
@@ -44,13 +48,15 @@ const profilesInfo = profiles.map(({ network, url }) => {
     title: `Visitar ${network}`,
     url,
     icon,
-    hotkey: `ctrl+${firstLetter}`
-  }
-})
+    hotkey: `ctrl+${firstLetter}`,
+  };
+});
 ---
 
 <footer class="no-print">
-    Pulsa <kbd>Ctrl</kbd> + <kbd>K</kbd> Para habrir la paleta de comandos
+  Press
+  <kbd>Ctrl</kbd> + <kbd>K</kbd>
+  To open the command palette
 </footer>
 
 <ninja-keys
@@ -97,15 +103,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
     }
   }
 
-  @keyframes fadein{
-    from{
+  @keyframes fadein {
+    from {
       opacity: 0;
     }
-    to{
+    to {
       opacity: 1;
     }
   }
-
 
   footer {
     background: #fdfdfd;
@@ -122,7 +127,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     view-timeline-axis: block;
 
     animation: linear 0.3s fadein;
-    animation-timeline: --scroll ;
+    animation-timeline: --scroll;
     animation-range: entry 100% cover 10%;
   }
 

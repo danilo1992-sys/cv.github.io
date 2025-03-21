@@ -1,0 +1,31 @@
+---
+import Icons from "@/components/icons.astro";
+import Section from "@/components/Section.astro";
+import User from "@/icons/user.astro";
+import { basics } from "../cv-en.json";
+const { summary } = basics;
+
+import { langlist } from "@/i18n/ui";
+import { translation } from "@/i18n/utils";
+import currentlang from "@/layouts/Layout.astro";
+
+const translator = translation(currentlang as unknown as keyof typeof langlist);
+---
+
+<Section>
+  <div>
+    <h2>{translator('h2.Aboutme')}  
+      <Icons>
+      <User/> 
+    </Icons>
+    </h2>
+  </div>
+  <p class="about-me-summary">{summary}</p>
+</Section>
+
+<style>
+  
+  .about-me-summary {
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+  }
+</style>

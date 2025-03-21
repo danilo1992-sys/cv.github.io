@@ -1,25 +1,17 @@
 ---
 import Section from "@/components/Section.astro";
+import Qr from "@/pages/en/Section/qr.astro";
 import Icons from "@/components/icons.astro";
-import { basics } from "@/cv.json";
 import GitHub from "@/icons/github.astro";
 import LinkedIn from "@/icons/linkedin.astro";
 import Location from "@/icons/location.astro";
 import Mail from "@/icons/mail.astro";
 import Phone from "@/icons/phone.astro";
-import Qr from '@/components/Section/qr.astro';
-const {
-  name,
-  titulo,
-  birthdate,
-  contacto,
-  location,
-  image,
-  profiles,
-} = basics;
+import { basics } from "../cv-en.json";
 
+const { name, title, birthdate, contact, location, image, profiles } = basics;
 
-const { email, phone } = contacto;
+const { email, phone } = contact;
 
 const { address, postalcode, country } = location;
 
@@ -39,7 +31,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
     <div class="info">
       <h1>{name}</h1>
       <p>Fecha de nacimiento: <h4>{birthdate}</h4></p>
-      <h2>{titulo}</h2>
+      <h2>{title}</h2>
       <span>
         {address}, {postalcode}, {country}
         <Icons>
@@ -94,7 +86,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
         }
       </footer>
     </div>
-    <Qr/>
+    <Qr />
     <figure>
       <img src={image} alt={name} />
     </figure>

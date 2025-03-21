@@ -1,0 +1,17 @@
+---
+import { basics } from "../cv.json";
+
+const { qr } = basics;
+---
+
+<figure class="print">
+  <img src={qr} alt="QR" />
+</figure>
+<style>
+  img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 128px;
+    border-radius: 16px;
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import Icons from "@/components/icons.astro";
+import Section from "@/components/Section.astro";
+import { langlist } from "@/i18n/ui";
+import { translation } from "@/i18n/utils";
+import Job from "@/icons/job.astro";
+import currentlang from "@/layouts/Layout.astro";
+import { experiencia } from "../cv.json";
+
+
+
+const translator = translation(currentlang as unknown as keyof typeof langlist);
+---
+
+<Section>
+  <h2>
+    {translator('h2.Academic')}
+    <Icons>
+      <Job />
+    </Icons>
+  </h2>
+  <ul>
+    {
+      experiencia.map(({ año, institución, titulo, summary }) => {
+        return experiencia ? (
+          <li>
+            <article>
+              <header>
+                <h2>{institución}</h2>
+                <time>{año}</time>
+              </header>
+              <h3>{titulo}</h3>
+              <footer>
+                <p>{summary}</p>
+              </footer>
+            </article>
+          </li>
+        ) : null;
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  article h3 {
+    font-weight: 500;
+    color: #111;
+    margin-top: 5px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  time {
+    font-size: 20px;
+  }
+</style>
